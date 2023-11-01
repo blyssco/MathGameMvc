@@ -4,6 +4,7 @@ using MathGameMvc.Models.Enum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace MathGameMvc.Controllers
 {
@@ -44,9 +45,9 @@ namespace MathGameMvc.Controllers
         public IActionResult Addition(int userAnswer, int correctAnswer)
         {
             SetViewData();
-
             int Score = HttpContext.Session.GetInt32("Score") ?? 0;
             int numberOfRounds = HttpContext.Session.GetInt32("NumberOfRounds") ?? 1;
+
             bool isCorrect = (userAnswer == correctAnswer);
 
             if (isCorrect)
