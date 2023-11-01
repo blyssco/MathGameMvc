@@ -1,0 +1,17 @@
+﻿@using MathGameMvc.Models.Enum
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-10">Welcome @ViewData["GamerTag"] to math Game !</h1>
+    <p>That's great that you're working on improving yourself </p>
+    <p>What game would you like to play today ? Choose from the options below:</p>
+    <ul class="List_Of_Games">
+        @foreach (var gameType in Enum.GetValues(typeof(GameType)))
+        {
+            <li value="@gameType"><a asp-area="" asp-controller="@gameType" asp-action="@gameType">@gameType</a></li>
+        }
+    </ul>
+</div>
+

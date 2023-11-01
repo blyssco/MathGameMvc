@@ -1,0 +1,20 @@
+﻿<h1>Random Addition</h1>
+<p>@ViewBag.Number1 / @ViewBag.Number2</p>
+
+<form method="post" asp-action="Division">
+    <input type="number" name="userAnswer" placeholder="Enter your answer" required>
+    <input type="hidden" name="correctAnswer" value="@ViewBag.Sum">
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.Correct != null)
+{
+    @if (ViewBag.Correct)
+    {
+        <p>Your answer is correct!</p>
+    }
+    else
+    {
+        <p>Sorry, your answer is incorrect.</p>
+    }
+}
